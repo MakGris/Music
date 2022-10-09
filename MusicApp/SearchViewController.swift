@@ -13,10 +13,11 @@ struct TrackModel {
 }
 class SearchViewController: UITableViewController {
     
+    private var timer: Timer?
+    
     let searchController = UISearchController(searchResultsController: nil)
     
-    let tracks = [TrackModel(trackName: "bad guy", artistName: "Billie Eilish"),
-                 TrackModel(trackName: "bury a friend", artistName: "Billie Eilish")]
+    var tracks = [Track]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class SearchViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
         var content = cell.defaultContentConfiguration()
         let track = tracks[indexPath.row]
-        content.text = "\(track.trackName)\n\(track.artistName)"
+        content.text = "\(track.trackName ?? "")\n\(track.artistName)"
         cell.textLabel?.numberOfLines = 2
         content.image = UIImage(named: "Image")
         cell.contentConfiguration = content
@@ -54,16 +55,32 @@ class SearchViewController: UITableViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //        print(searchText)
-        let url = "https://itunes.apple.com/search?term=\(searchText)"
-        AF.request(url).response { dataResponse in
-            if let error = dataResponse.error {
-                print("Error received requesting data:\(error.localizedDescription)")
-                return
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            let url = "https://itunes.apple.com/search"
+            let parametrs = ["term": "\(searchText)",
+                             "limit": "10"]
+            AF.request(url, method: .get, parameters: parametrs, encoding: URLEncoding.default).response { dataResponse in
+                if let error = dataResponse.error {
+                    print("Error received requesting data:\(error.localizedDescription)")
+                    return
+                }
+                guard let data = dataResponse.data else { return }
+                
+                let decoder = JSONDecoder()
+                do {
+                    let objects = try decoder.decode(SearchResponse.self, from: data)
+                    print("objects", objects)
+                    self.tracks = objects.results
+                    self.tableView.reloadData()
+                    
+                    
+                } catch let jsonError {
+                    print("failed to decode JSON", jsonError)
+                }
+    //            let someString = String(data: data, encoding: .utf8)
+    //            print(someString ?? "")
             }
-            guard let data = dataResponse.data else { return }
-            let someString = String(data: data, encoding: .utf8)
-            print(someString ?? "")
-        }
-        
+        })
     }
 }
