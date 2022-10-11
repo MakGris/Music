@@ -21,7 +21,7 @@ class MainTabBarController: UITabBarController {
             alpha: 1
         )
         viewControllers = [generateViewController(
-            rootViewController: SearchViewController(),
+            rootViewController: SearchMusicViewController(),
             image: UIImage(named: "Search") ?? UIImage(),
             title: "Search"
         ), generateViewController(
