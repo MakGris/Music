@@ -28,6 +28,7 @@
 		D5EE904328F03DBD005482FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EE904128F03DBD005482FF /* LaunchScreen.storyboard */; };
 		D5EE904B28F03F82005482FF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE904A28F03F82005482FF /* MainTabBarController.swift */; };
 		D5EE904D28F04A82005482FF /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE904C28F04A82005482FF /* SearchMusicViewController.swift */; };
+		D5FA17A428F829D2000BF26C /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA17A328F829D2000BF26C /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		D5EE904428F03DBD005482FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5EE904A28F03F82005482FF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		D5EE904C28F04A82005482FF /* SearchMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
+		D5FA17A328F829D2000BF26C /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		F5DE08EF93888F7B5621C92E /* Pods_MusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 		D5C9253D28F58DB70029E140 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				D5FA17A228F829BF000BF26C /* FooterView */,
 				D52DF55328F6E1D8000E9CF6 /* Cell */,
 				D5C9255B28F593510029E140 /* SearchViewController.storyboard */,
 				D5C9255128F58F670029E140 /* SearchViewController.swift */,
@@ -171,6 +174,14 @@
 				D5EE904428F03DBD005482FF /* Info.plist */,
 			);
 			path = MusicApp;
+			sourceTree = "<group>";
+		};
+		D5FA17A228F829BF000BF26C /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				D5FA17A328F829D2000BF26C /* FooterView.swift */,
+			);
+			path = FooterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 				D5EE903B28F03DBD005482FF /* ViewController.swift in Sources */,
 				D521EA7E28F2A4CB000756CF /* SearchResponse.swift in Sources */,
 				D5C9255928F58F670029E140 /* SearchInteractor.swift in Sources */,
+				D5FA17A428F829D2000BF26C /* FooterView.swift in Sources */,
 				D52DF55728F6E209000E9CF6 /* TrackCell.swift in Sources */,
 				D5EE903728F03DBD005482FF /* AppDelegate.swift in Sources */,
 				D5EE904B28F03F82005482FF /* MainTabBarController.swift in Sources */,
