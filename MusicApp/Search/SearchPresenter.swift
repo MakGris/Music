@@ -23,7 +23,6 @@ class SearchPresenter: SearchPresentationLogic {
               cellViewModel(from: track)
           }) ?? []
           let searchViewModel = SearchViewModel(cells: cells)
-          print("presenter .presentTracks")
           viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayTracks(searchViewModel: searchViewModel))
           
       case .presentFooterView:
