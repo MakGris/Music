@@ -48,7 +48,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         super.viewDidLoad()
         setupSearchBar()
         setupTableView()
+        searchBar(searchController.searchBar, textDidChange: "Guf")
         setup()
+        
     }
     
     private func setupSearchBar() {
