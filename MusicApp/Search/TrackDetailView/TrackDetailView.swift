@@ -9,6 +9,11 @@ import UIKit
 import SDWebImage
 import AVKit
 
+protocol TrackMovingDelegate: AnyObject {
+    func moveBackForPreviousTrack() -> SearchViewModel.Cell?
+    func moveForwardForNextTrack() -> SearchViewModel.Cell?
+}
+
 class TrackDetailView: UIView {
     
     @IBOutlet weak var trackImageView: UIImageView!
@@ -25,6 +30,8 @@ class TrackDetailView: UIView {
         avPlayer.automaticallyWaitsToMinimizeStalling = false
         return avPlayer
     }()
+    
+    weak var delegate: TrackMovingDelegate?
     
 //    MARK: - awakeFromNib
     
@@ -75,7 +82,19 @@ class TrackDetailView: UIView {
         let interval = CMTimeMake(value: 1, timescale: 2)
         player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
             self?.currentTimeLabel.text = time.toDisplayString()
+            
+            let durationTime = self?.player.currentItem?.duration
+            let currentDurationTimeText = ((durationTime ?? CMTimeMake(value: 1, timescale: 1)) - time).toDisplayString()
+            self?.durationLabel.text = "-\(currentDurationTimeText)"
+            self?.updateCurrentTimeSlider()
         }
+    }
+    
+    private func updateCurrentTimeSlider() {
+        let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
+        let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
+        let percentage = currentTimeSeconds / durationSeconds
+        self.currentTimeSlider.value = Float(percentage)
     }
 
     //    MARK: - Animations
@@ -108,10 +127,17 @@ class TrackDetailView: UIView {
 //    MARK: - @IBActions
     
     @IBAction func handleCurrentTimeSlider(_ sender: Any) {
-    
+        let percantage = currentTimeSlider.value
+        guard let duration = player.currentItem?.duration else { return }
+        let durationInSeconds = CMTimeGetSeconds(duration)
+        let seekTimeInSeconds = Double(percantage) * durationInSeconds
+        let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, preferredTimescale: 1)
+        player.seek(to: seekTime)
+       
     }
     
     @IBAction func handleVolumeSlider(_ sender: Any) {
+        player.volume = volumeSlider.value
     }
     
     @IBAction func dragDownButtonTapped(_ sender: Any) {
@@ -119,10 +145,15 @@ class TrackDetailView: UIView {
     }
     
     @IBAction func previousTrack(_ sender: Any) {
-
+        let cellViewModel = (delegate?.moveBackForPreviousTrack())
+        guard let cellViewModel = cellViewModel else { return }
+        self.set(viewModel: cellViewModel)
     }
     
     @IBAction func nextTrack(_ sender: Any) {
+        let cellViewModel = (delegate?.moveForwardForNextTrack())
+        guard let cellViewModel = cellViewModel else { return }
+        self.set(viewModel: cellViewModel)
     }
     
     @IBAction func playPauseAction(_ sender: Any) {
