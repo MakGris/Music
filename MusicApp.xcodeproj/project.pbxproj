@@ -12,6 +12,7 @@
 		D521EA8028F43E82000756CF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521EA7F28F43E82000756CF /* NetworkService.swift */; };
 		D52DF55528F6E1EE000E9CF6 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52DF55428F6E1EE000E9CF6 /* TrackCell.xib */; };
 		D52DF55728F6E209000E9CF6 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52DF55628F6E209000E9CF6 /* TrackCell.swift */; };
+		D5539EB22901615300778CEE /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5539EB12901615300778CEE /* Nib.swift */; };
 		D5796B2F290019C700FFB63B /* CMTime + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5796B2E290019C700FFB63B /* CMTime + Extension.swift */; };
 		D5C9255428F58F670029E140 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C9254D28F58F670029E140 /* SearchPresenter.swift */; };
 		D5C9255528F58F670029E140 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C9254E28F58F670029E140 /* SearchWorker.swift */; };
@@ -41,6 +42,7 @@
 		D521EA7F28F43E82000756CF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D52DF55428F6E1EE000E9CF6 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		D52DF55628F6E209000E9CF6 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		D5539EB12901615300778CEE /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		D5796B2E290019C700FFB63B /* CMTime + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime + Extension.swift"; sourceTree = "<group>"; };
 		D5C9254D28F58F670029E140 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		D5C9254E28F58F670029E140 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				D5C9255D28F598B30029E140 /* UIViewController + Storyboard.swift */,
 				D5796B2E290019C700FFB63B /* CMTime + Extension.swift */,
+				D5539EB12901615300778CEE /* Nib.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				D5FA17A428F829D2000BF26C /* FooterView.swift in Sources */,
 				D5796B2F290019C700FFB63B /* CMTime + Extension.swift in Sources */,
 				D52DF55728F6E209000E9CF6 /* TrackCell.swift in Sources */,
+				D5539EB22901615300778CEE /* Nib.swift in Sources */,
 				D5EE903728F03DBD005482FF /* AppDelegate.swift in Sources */,
 				D5EE904B28F03F82005482FF /* MainTabBarController.swift in Sources */,
 				D5C9255528F58F670029E140 /* SearchWorker.swift in Sources */,
