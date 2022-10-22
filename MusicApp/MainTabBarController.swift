@@ -112,6 +112,8 @@ extension MainTabBarController: MAinTabBarControllerDelegate {
             options: .curveEaseInOut) {
                 self.view.layoutIfNeeded()
                 self.tabBar.alpha = 0
+                self.trackDetailView.miniTrackView.alpha = 0
+                self.trackDetailView.maximizedStackView.alpha = 1
             }
         guard let viewModel = viewModel else { return }
         self.trackDetailView.set(viewModel: viewModel)
@@ -129,6 +131,8 @@ extension MainTabBarController: MAinTabBarControllerDelegate {
             options: .curveEaseInOut) {
                 self.view.layoutIfNeeded()
                 self.tabBar.alpha = 1
+                self.trackDetailView.miniTrackView.alpha = 1
+                self.trackDetailView.maximizedStackView.alpha = 0
             }
     }
     
