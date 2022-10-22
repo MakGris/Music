@@ -51,6 +51,7 @@ class TrackDetailView: UIView {
         playTrack(previewURL: viewModel.previewUrl)
         monitorStartTime()
         observePlayerCurrentTime()
+        playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
         let string600 = viewModel.iconUrlString?.replacingOccurrences(
             of: "100x100",
             with: "600x600"
