@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol MAinTabBarControllerDelegate: AnyObject {
     func minimizeTrackDetailController()
@@ -36,14 +37,15 @@ class MainTabBarController: UITabBarController {
         setupTrackDetailVIew()
         searchVC.tabBarDelegate = self
         
-        viewControllers = [generateViewController(
+        let library = Library()
+        let hostVC = UIHostingController(rootView: library)
+        hostVC.tabBarItem.image = UIImage(named: "Library")
+        hostVC.tabBarItem.title  = "Library"
+        
+        viewControllers = [hostVC, generateViewController(
             rootViewController: searchVC,
             image: UIImage(named: "Search") ?? UIImage(),
             title: "Search"
-        ), generateViewController(
-            rootViewController: ViewController(),
-            image: UIImage(named: "Library") ?? UIImage(),
-            title: "Library"
         )]
     }
     
@@ -100,8 +102,8 @@ class MainTabBarController: UITabBarController {
 extension MainTabBarController: MAinTabBarControllerDelegate {
     
     func maximizeTrackDetailController(viewModel: SearchViewModel.Cell?) {
-        maximizedTopAnchorConstraint.isActive = true
         minimizedTopAnchorConstraint.isActive = false
+        maximizedTopAnchorConstraint.isActive = true
         maximizedTopAnchorConstraint.constant = 0
         bottomAnchorConstraint.constant = 0
         UIView.animate(

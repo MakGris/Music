@@ -12,6 +12,7 @@
 		D521EA8028F43E82000756CF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521EA7F28F43E82000756CF /* NetworkService.swift */; };
 		D52DF55528F6E1EE000E9CF6 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52DF55428F6E1EE000E9CF6 /* TrackCell.xib */; };
 		D52DF55728F6E209000E9CF6 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52DF55628F6E209000E9CF6 /* TrackCell.swift */; };
+		D534A00B2906A79D0078F08C /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534A00A2906A79D0078F08C /* Library.swift */; };
 		D5539EB22901615300778CEE /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5539EB12901615300778CEE /* Nib.swift */; };
 		D5796B2F290019C700FFB63B /* CMTime + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5796B2E290019C700FFB63B /* CMTime + Extension.swift */; };
 		D5C9255428F58F670029E140 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C9254D28F58F670029E140 /* SearchPresenter.swift */; };
@@ -42,6 +43,7 @@
 		D521EA7F28F43E82000756CF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D52DF55428F6E1EE000E9CF6 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		D52DF55628F6E209000E9CF6 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		D534A00A2906A79D0078F08C /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		D5539EB12901615300778CEE /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		D5796B2E290019C700FFB63B /* CMTime + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime + Extension.swift"; sourceTree = "<group>"; };
 		D5C9254D28F58F670029E140 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				D5EE903828F03DBD005482FF /* SceneDelegate.swift */,
 				D5C9254C28F58EEB0029E140 /* Services */,
 				D5EE904A28F03F82005482FF /* MainTabBarController.swift */,
+				D534A00A2906A79D0078F08C /* Library.swift */,
 				D5C9253D28F58DB70029E140 /* Search */,
 				D5EE904C28F04A82005482FF /* SearchMusicViewController.swift */,
 				D5EE903A28F03DBD005482FF /* ViewController.swift */,
@@ -339,6 +342,7 @@
 				D5C9255728F58F670029E140 /* SearchModels.swift in Sources */,
 				D5EE903928F03DBD005482FF /* SceneDelegate.swift in Sources */,
 				D5C9255428F58F670029E140 /* SearchPresenter.swift in Sources */,
+				D534A00B2906A79D0078F08C /* Library.swift in Sources */,
 				D5FA17A928F838FD000BF26C /* TrackDetailView.swift in Sources */,
 				D521EA8028F43E82000756CF /* NetworkService.swift in Sources */,
 			);
