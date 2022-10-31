@@ -15,6 +15,8 @@
 		D534A00B2906A79D0078F08C /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534A00A2906A79D0078F08C /* Library.swift */; };
 		D5539EB22901615300778CEE /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5539EB12901615300778CEE /* Nib.swift */; };
 		D5796B2F290019C700FFB63B /* CMTime + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5796B2E290019C700FFB63B /* CMTime + Extension.swift */; };
+		D59E60FC290AA71E0073A1B1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E60FB290AA71E0073A1B1 /* UserDefaults.swift */; };
+		D59E60FF290AADB30073A1B1 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = D59E60FE290AADB30073A1B1 /* URLImage */; };
 		D5C9255428F58F670029E140 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C9254D28F58F670029E140 /* SearchPresenter.swift */; };
 		D5C9255528F58F670029E140 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C9254E28F58F670029E140 /* SearchWorker.swift */; };
 		D5C9255628F58F670029E140 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C9254F28F58F670029E140 /* SearchRouter.swift */; };
@@ -46,6 +48,7 @@
 		D534A00A2906A79D0078F08C /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		D5539EB12901615300778CEE /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		D5796B2E290019C700FFB63B /* CMTime + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime + Extension.swift"; sourceTree = "<group>"; };
+		D59E60FB290AA71E0073A1B1 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		D5C9254D28F58F670029E140 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		D5C9254E28F58F670029E140 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		D5C9254F28F58F670029E140 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D59E60FF290AADB30073A1B1 /* URLImage in Frameworks */,
 				80D4352946CC83E2D0AC5080 /* Pods_MusicApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +152,7 @@
 				D5C9255D28F598B30029E140 /* UIViewController + Storyboard.swift */,
 				D5796B2E290019C700FFB63B /* CMTime + Extension.swift */,
 				D5539EB12901615300778CEE /* Nib.swift */,
+				D59E60FB290AA71E0073A1B1 /* UserDefaults.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -225,6 +230,9 @@
 			dependencies = (
 			);
 			name = MusicApp;
+			packageProductDependencies = (
+				D59E60FE290AADB30073A1B1 /* URLImage */,
+			);
 			productName = MusicApp;
 			productReference = D5EE903328F03DBD005482FF /* MusicApp.app */;
 			productType = "com.apple.product-type.application";
@@ -253,6 +261,9 @@
 				Base,
 			);
 			mainGroup = D5EE902A28F03DBC005482FF;
+			packageReferences = (
+				D59E60FD290AADB30073A1B1 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = D5EE903428F03DBD005482FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,6 +341,7 @@
 				D5EE903B28F03DBD005482FF /* ViewController.swift in Sources */,
 				D521EA7E28F2A4CB000756CF /* SearchResponse.swift in Sources */,
 				D5C9255928F58F670029E140 /* SearchInteractor.swift in Sources */,
+				D59E60FC290AA71E0073A1B1 /* UserDefaults.swift in Sources */,
 				D5FA17A428F829D2000BF26C /* FooterView.swift in Sources */,
 				D5796B2F290019C700FFB63B /* CMTime + Extension.swift in Sources */,
 				D52DF55728F6E209000E9CF6 /* TrackCell.swift in Sources */,
@@ -574,6 +586,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D59E60FD290AADB30073A1B1 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D59E60FE290AADB30073A1B1 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D59E60FD290AADB30073A1B1 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D5EE902B28F03DBC005482FF /* Project object */;
 }
